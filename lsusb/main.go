@@ -1,4 +1,3 @@
-// Copyright 2015, Truveris Inc. All Rights Reserved.
 // Copyright 2013 Google Inc.  All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,8 +20,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/truveris/gousb/usb"
-	"github.com/truveris/gousb/usbid"
+	"github.com/giddyinc/gousb/usb"
+	"github.com/giddyinc/gousb/usbid"
 )
 
 var (

@@ -26,7 +26,7 @@ will list the USB devices connected to your system and various interesting
 tidbits about them, their configurations, endpoints, etc.  To install it, run
 the following command:
 
-    go get -v github.com/kylelemons/gousb/lsusb
+    go get -v github.com/giddyinc/gousb/lsusb
 
 gousb
 -----
@@ -34,7 +34,7 @@ If you installed the lsusb example, both libraries below are already installed.
 
 Installing the primary gousb package is really easy:
 
-    go get -v github.com/kylelemons/gousb/usb
+    go get -v github.com/giddyinc/gousb/usb
 
 There is also a `usbid` package that will not be installed by default by this
 command, but which provides useful information including the human-readable
@@ -42,11 +42,11 @@ vendor and product codes for detected hardware.  It's not installed by default
 and not linked into the `usb` package by default because it adds ~400kb to the
 resulting binary.  If you want both, they can be installed thus:
 
-    go get -v github.com/kylelemons/gousb/usb{,id}
+    go get -v github.com/giddyinc/gousb/usb{,id}
 
 Documentation
 =============
 The documentation can be viewed via local godoc or via Gary Burd's excellent [godoc.org](http://godoc.org/):
 
-- [usb](http://godoc.org/github.com/kylelemons/gousb/usb)
-- [usbid](http://godoc.org/pkg/github.com/kylelemons/gousb/usbid)
+- [usb](http://godoc.org/github.com/giddyinc/gousb/usb)
+- [usbid](http://godoc.org/pkg/github.com/giddyinc/gousb/usbid)
