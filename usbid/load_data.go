@@ -13234,10 +13234,10 @@ const usbIdListData = `
 	000d  WL-168 Wireless Network Adapter 54g
 	0017  WL-182 Wireless-N Network USB Card
 	0019  Bluetooth 2.0 adapter 10m CN-512v2 001
-	001a  Bluetooth 2.0 adapter 100m CN-521v2 001 
+	001a  Bluetooth 2.0 adapter 100m CN-521v2 001
 	002b  WL-188 Wireless Network 300N USB Adapter
 	002c  WL-301 Wireless Network 300N USB Adapter
-	002d  WL-302 Wireless Network 300N USB dongle 
+	002d  WL-302 Wireless Network 300N USB dongle
 	0036  WL-603 Wireless Adapter
 	0039  WL-315 Wireless-N USB Adapter
 	003b  WL-321 Wireless USB Gaming Adapter 300N
@@ -13791,7 +13791,7 @@ const usbIdListData = `
 	e0a1  K810 (Mass Storage mode)
 	e0a3  W660i
 	e0af  V640i Phone [Mass Storage]
-	e0d4  C902 Phone [Mass Storage] 
+	e0d4  C902 Phone [Mass Storage]
 	e0ef  C905 Phone [Mass Storage]
 	e0f3  W595
 	e105  W705
@@ -18875,7 +18875,7 @@ HUT 07  Keyboard
 	032  # and ~ (Hash and Tilde, Non-US Keyboard near right shift)
 	033  ; and : (Semicolon and Colon)
 	034  ´ and " (Accent Acute and Double Quotes)
-	035  ` and ~ (Accent Grace and Tilde)
+	035  (grace) and ~ (Accent Grace and Tilde)
 	036  , and < (Comma and Less)
 	037  . and > (Period and Greater)
 	038  / and ? (Slash and Question Mark)
