@@ -121,7 +121,12 @@ func (d *Device) Close() error {
 	return nil
 }
 
+// Detach from kernel if kernel attached a driver to the device.
+// If it's attached, C.libusb_kernel_driver_active returns 1.
 func (d *Device) DetachKernelDriver(iface uint8) error {
+	if C.libusb_kernel_driver_active(d.handle, C.int(iface)) != 1 {
+		return nil
+	}
 	errno := C.libusb_detach_kernel_driver(d.handle, C.int(iface))
 	if errno != 0 {
 		return usbError(errno)
