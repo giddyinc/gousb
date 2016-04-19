@@ -20,7 +20,6 @@ package usb
 import "C"
 
 import (
-	"errors"
 	"log"
 	"reflect"
 	"unsafe"
@@ -89,7 +88,7 @@ func (c *Context) ListDevices(each func(desc *Descriptor) bool) ([]*Device, erro
 	}
 
 	var reterr error
-	ret := []*Device{}
+	var ret []*Device
 	for _, dev := range slice {
 		desc, err := newDescriptor(dev)
 		if err != nil {
@@ -100,8 +99,7 @@ func (c *Context) ListDevices(each func(desc *Descriptor) bool) ([]*Device, erro
 		if each(desc) {
 			var handle *C.libusb_device_handle
 			if errno := C.libusb_open(dev, &handle); errno != 0 {
-				errName := C.GoString(C.libusb_error_name(errno))
-				reterr = errors.New("libusb error: " + errName)
+				reterr = usbError(errno)
 				continue
 			}
 			ret = append(ret, newDevice(handle, desc))
@@ -112,6 +110,30 @@ func (c *Context) ListDevices(each func(desc *Descriptor) bool) ([]*Device, erro
 
 func (c *Context) HandleEvents() {
 	c.yield <- struct{}{}
+}
+
+// OpenDeviceWithVidPid opens Device from specific VendorId and ProductId.
+// If there are any errors, it'll returns at second value.
+func (c *Context) OpenDeviceWithVidPid(vid, pid int) (*Device, error) {
+	handle := C.libusb_open_device_with_vid_pid(c.ctx, (C.uint16_t)(vid), (C.uint16_t)(pid))
+	if handle == nil {
+		return nil, ERROR_NOT_FOUND
+	}
+
+	dev := C.libusb_get_device(handle)
+	if dev == nil {
+		return nil, ERROR_NO_DEVICE
+	}
+
+	desc, err := newDescriptor(dev)
+
+	// return an error from nil-handle and nil-device
+	if err != nil {
+		return nil, err
+	}
+
+	device := newDevice(handle, desc)
+	return device, nil
 }
 
 func (c *Context) Close() error {

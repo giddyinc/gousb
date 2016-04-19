@@ -14,8 +14,15 @@
 
 package usbid
 
-const usbIdListData = `
-#
+import "time"
+
+// LastUpdate stores the latest time that the library was updated.
+//
+// The baked-in data was last generated:
+//   2016-04-03 20:03:19.628811942 -0700 PDT
+var LastUpdate = time.Unix(0, 1459738999628811942)
+
+const usbIdListData = `#
 #	List of USB ID's
 #
 #	Maintained by Stephen J. Gowdy <linux.usb.ids@gmail.com>
@@ -26,8 +33,8 @@ const usbIdListData = `
 #	The latest version can be obtained from
 #		http://www.linux-usb.org/usb.ids
 #
-# Version: 2015.12.17
-# Date:    2015-12-17 20:34:05
+# Version: 2016.03.03
+# Date:    2016-03-03 20:34:05
 #
 
 # Vendors, devices and interfaces. Please keep sorted.
@@ -2027,7 +2034,7 @@ const usbIdListData = `
 	0008  SideWinder Precision Pro
 	0009  IntelliMouse
 	000b  Natural Keyboard Elite
-	000e  SideWinderÂ® Freestyle Pro
+	000e  SideWinder Freestyle Pro
 	0014  Digital Sound System 80
 	001a  SideWinder Precision Racing Wheel
 	001b  SideWinder Force Feedback 2 Joystick
@@ -3059,7 +3066,7 @@ const usbIdListData = `
 	0138  Unicorn II (ST70138B + MTC-20174TQ chipset)
 	1307  Cytronix 6in1 Card Reader
 	163d  Cool Icam Digi-MP3
-	2015  TouchChipÂ® Fingerprint Reader
+	2015  TouchChip Fingerprint Reader
 	2016  Fingerprint Reader
 	2017  Biometric Smart Card Reader
 	2018  BioSimKey
@@ -4721,18 +4728,18 @@ const usbIdListData = `
 04e7  Elo TouchSystems
 	0001  TouchScreen
 	0002  Touchmonitor Interface 2600 Rev 2
-	0004  4000U CarrollTouchÂ® Touchmonitor Interface
-	0007  2500U IntelliTouchÂ® Touchmonitor Interface
-	0008  3000U AccuTouchÂ® Touchmonitor Interface
-	0009  4000U CarrollTouchÂ® Touchmonitor Interface
+	0004  4000U CarrollTouch Touchmonitor Interface
+	0007  2500U IntelliTouch Touchmonitor Interface
+	0008  3000U AccuTouch Touchmonitor Interface
+	0009  4000U CarrollTouch Touchmonitor Interface
 	0020  Touchscreen Interface (2700)
 	0021  Touchmonitor Interface
-	0030  4500U CarrollTouchÂ® Touchmonitor Interface
+	0030  4500U CarrollTouch Touchmonitor Interface
 	0032  Touchmonitor Interface
 	0033  Touchmonitor Interface
 	0041  5010 Surface Capacitive Touchmonitor Interface
 	0042  Touchmonitor Interface
-	0050  2216 AccuTouchÂ® Touchmonitor Interface
+	0050  2216 AccuTouch Touchmonitor Interface
 	0071  Touchmonitor Interface
 	0072  Touchmonitor Interface
 	0081  Touchmonitor Interface
@@ -10577,9 +10584,9 @@ const usbIdListData = `
 	2295  Colorado 300
 	22b6  eTrex Vista HCx (Mass Storage mode)
 	231b  Oregon 400t
-	2353  NÃ¼vi 205T
+	2353  Nvi 205T
 	2380  Oregon series
-	23cc  nÃ¼vi 1350
+	23cc  nvi 1350
 	2459  GPSmap 62/78 series
 	2491  Edge 800
 	2519  eTrex 30
@@ -10652,7 +10659,7 @@ const usbIdListData = `
 	0509  BT EDR Dongle
 	0706  PocketPC e740
 	0707  Pocket PC e330 Series
-	0708  Pocket PC e350Â Series
+	0708  Pocket PC e350Series
 	0709  Pocket PC e750 Series
 	070a  Pocket PC e400 Series
 	070b  Pocket PC e800 Series
@@ -12632,7 +12639,7 @@ const usbIdListData = `
 	3050  EZ710 Smart Card Reader
 0ca7  Information Systems Laboratories
 0cad  Motorola CGISS
-	9001  PowerPad Pocket PCÂ Device
+	9001  PowerPad Pocket PCDevice
 0cae  Ascom Business Systems, Ltd
 0caf  Buslink
 	2507  Hi-Speed USB-to-IDE Bridge Controller
@@ -12683,7 +12690,7 @@ const usbIdListData = `
 	0035  Miditech Play'n Roll
 	0036  Cinergy 250 Audio
 	0037  Cinergy 250 Audio
-	0038  Cinergy TÂ² DVB-T Receiver
+	0038  Cinergy T DVB-T Receiver
 	0039  Grabster AV 400
 	003b  Cinergy 400
 	003c  Grabster AV 250
@@ -12692,7 +12699,7 @@ const usbIdListData = `
 	004e  Cinergy T XS
 	004f  Cinergy Analog XS
 	0055  Cinergy T XE (Version 1, AF9005)
-	005c  Cinergy TÂ²
+	005c  Cinergy T
 	0069  Cinergy T XE (Version 2, AF9015)
 	006b  Cinergy HT PVR (EU)
 	0072  Cinergy Hybrid T
@@ -14016,7 +14023,7 @@ const usbIdListData = `
 	0008  Infinity CryptoKey
 	0009  RE-BL PlayStation 3 IR-to-Bluetooth converter
 1050  Yubico.com
-	0010  Yubikey
+	0010  Yubikey (v1 or v2)
 	0110  Yubikey NEO(-N) OTP
 	0111  Yubikey NEO(-N) OTP+CCID
 	0112  Yubikey NEO(-N) CCID
@@ -14025,8 +14032,16 @@ const usbIdListData = `
 	0115  Yubikey NEO(-N) U2F+CCID
 	0116  Yubikey NEO(-N) OTP+U2F+CCID
 	0120  Yubikey Touch U2F Security Key
-	0200  U2F Gnubby
+	0200  Gnubby U2F
 	0211  Gnubby
+	0401  Yubikey 4 OTP
+	0402  Yubikey 4 U2F
+	0403  Yubikey 4 OTP+U2F
+	0404  Yubikey 4 CCID
+	0405  Yubikey 4 OTP+CCID
+	0406  Yubikey 4 U2F+CCID
+	0407  Yubikey 4 OTP+U2F+CCID
+	0410  Yubikey plus OTP+U2F
 1053  Immanuel Electronics Co., Ltd
 1054  BMS International Beheer N.V.
 	5004  DSL 7420 Loader
@@ -17080,7 +17095,7 @@ const usbIdListData = `
 	0402  FTDI232 [EasyPort]
 	0403  FTDI232 [EasyPort Mini]
 	0404  FTDI232 [Netzteil-GL]
-	0405  FTDI232 [MotorPrÃ¼fstand]
+	0405  FTDI232 [MotorPrfstand]
 	0406  STM32F103 [EasyKit]
 	0407  LPC2378 [Robotino]
 	0408  LPC2378 [Robotino-Arm]
@@ -18185,8 +18200,8 @@ const usbIdListData = `
 	2448  82801 PCI Bridge
 	3100  PRO/DSL 3220 Modem - WAN
 	3101  PRO/DSL 3220 Modem
-	3240  AnyPointÂ® 3240 Modem - WAN
-	3241  AnyPointÂ® 3240 Modem
+	3240  AnyPoint 3240 Modem - WAN
+	3241  AnyPoint 3240 Modem
 	8602  Miniature Card Slot
 	9303  Intel 8x930Hx Hub
 	9500  CE 9500 DVB-T
@@ -18874,8 +18889,8 @@ HUT 07  Keyboard
 	031  \ and | (Backslash and Bar)
 	032  # and ~ (Hash and Tilde, Non-US Keyboard near right shift)
 	033  ; and : (Semicolon and Colon)
-	034  ´ and " (Accent Acute and Double Quotes)
-	035  (grace) and ~ (Accent Grace and Tilde)
+	034   and " (Accent Acute and Double Quotes)
+	035   and ~ (Accent Grace and Tilde)
 	036  , and < (Comma and Less)
 	037  . and > (Period and Greater)
 	038  / and ? (Slash and Question Mark)
@@ -20035,4 +20050,5 @@ VT 0302  Sequential Media
 VT 0400  External Vendor Specific
 VT 0401  Composite Video
 VT 0402  S-Video
-VT 0403  Component Video`
+VT 0403  Component Video
+`

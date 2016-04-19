@@ -18,6 +18,7 @@ import (
 	"log"
 	"net/http"
 	"strings"
+	"time"
 
 	"github.com/giddyinc/gousb/usb"
 )
@@ -55,8 +56,11 @@ func LoadFromURL(url string) error {
 
 	Vendors = ids
 	Classes = cls
+	LastUpdate = time.Now()
 	return nil
 }
+
+//go:generate go run regen/regen.go --template regen/load_data.go.tpl -o load_data.go
 
 func init() {
 	ids, cls, err := ParseIDs(strings.NewReader(usbIdListData))

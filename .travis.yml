@@ -1,0 +1,12 @@
+language: go
+
+go:
+  - 1.6
+  - tip
+
+script: go test -v -test.run='BCD|Parse' ./...
+
+addons:
+  apt:
+    packages:
+      libusb-1.0-0-dev

@@ -1,6 +1,9 @@
 Introduction
 ============
 
+[![Build Status][ciimg]][ci]
+[![GoDoc][docimg]][doc]
+
 The gousb package is an attempt at wrapping the libusb library into a Go-like binding.
 
 Supported platforms include:
@@ -9,10 +12,8 @@ Supported platforms include:
 - darwin
 - openbsd (no hotplug)
 
-Windows support is unconfirmed, but should work via cgo and [libusb-win32](http://sourceforge.net/apps/trac/libusb-win32/wiki).
-
-Installation
-============
+Installation on Linux
+=====================
 
 Dependencies
 ------------
@@ -46,7 +47,7 @@ resulting binary.  If you want both, they can be installed thus:
 
 Documentation
 =============
-The documentation can be viewed via local godoc or via Gary Burd's excellent [godoc.org](http://godoc.org/):
+The documentation can be viewed via local godoc or via the excellent [godoc.org](http://godoc.org/):
 
 - [usb](http://godoc.org/github.com/giddyinc/gousb/usb)
 - [usbid](http://godoc.org/pkg/github.com/giddyinc/gousb/usbid)
